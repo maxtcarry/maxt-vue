@@ -37,3 +37,13 @@ npm install commander download-git-repo inquirer handlebars ora chalk log-symbol
 - GitHub - github:owner/name or simply owner/name
 - GitLab - gitlab:owner/name
 - Bitbucket - bitbucket:owner/name
+
+
+
+### 如何下载项目
+
+- `npm install maxt-vue -g`
+
+- `maxt-vue init <name>`
+
+- 看项目提示
