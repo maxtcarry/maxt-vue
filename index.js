@@ -7,7 +7,7 @@ const inquirer = require('inquirer');
 const ora = require('ora');
 const chalk = require('chalk');
 const symbols = require('log-symbols');
-program.version('1.0.8', '-v, --version')
+program.version('1.1.0', '-v, --version')
     .command('init <name>')
     .action((name,version) => {
       // console.log(name,version)
@@ -44,7 +44,7 @@ program.version('1.0.8', '-v, --version')
                          newData.author= answers.author;
                          newData.description=answers.description;
                          newData.version = answers.version;
-                         fs.writeFile(fileName ,JSON.stringify(newData), function(err) {
+                         fs.writeFile(fileName ,JSON.stringify(newData,null,2), function(err) {
                           if (err) {
                               return console.error(err);
                           }
@@ -54,6 +54,7 @@ program.version('1.0.8', '-v, --version')
 
                         console.log(symbols.warning, chalk.green('注意 修改< vue.config.js >来满足自己的项目需求'));
                         console.log('||       cd '+ name +'');
+                        console.log('||       npm install 安装集成的控件等');
                         console.log('||       npm run serve 启动本地环境');
                         console.log('||       npm run build 构建生产环境');
                     }
